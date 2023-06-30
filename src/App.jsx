@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Starred from './pages/starred';
 import Mainlayout from './components/mainlayout';
+import Show from './pages/show';
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/starred" element={<Starred />} />
         </Route>
+        <Route path="/show/:showId"element={<Show />}>
+        
+        </Route>
       </Routes>
+      
     </BrowserRouter>
   );
 }
