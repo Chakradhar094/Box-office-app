@@ -14,9 +14,15 @@ const Home = () => {
       setapierror(null);
       if(searchoption==='shows'){
       const result = await majeapi(`/search/shows?q=${q}`);
+      if(result.length===0){
+           throw new Error("no results");
+      }
       setapidata(result);
       }else{
         const result = await majeapi(`/search/people?q=${q}`);
+        if(result.length===0){
+          throw new Error("no results");
+     }
         setapidata(result);
       }
       
@@ -24,7 +30,7 @@ const Home = () => {
       setapierror(err);
     }
   };
-  console.log(apierror);
+ 
   const renderapidata = () => {
     if (apierror) {
 

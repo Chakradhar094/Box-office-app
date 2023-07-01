@@ -11,10 +11,12 @@ function App() {
         <Route element={<Mainlayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/starred" element={<Starred />} />
-        </Route>
-        <Route path="/show/:showId"element={<Show />}>
         
+          
         </Route>
+     
+        <Route path="/show/:showId"element={<Show />}/>
+       
       </Routes>
       
     </BrowserRouter>

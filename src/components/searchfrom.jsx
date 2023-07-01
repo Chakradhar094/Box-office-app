@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useEffect } from "react";
 const Search=({onsearch})=>{
     const [serachStr, setsearchStr] = useState('');
    
@@ -21,6 +21,12 @@ const Search=({onsearch})=>{
         }
         onsearch(obj);
      }
+    
+     useEffect(()=>{
+        setTimeout(()=>console.log(1000),100);
+     },[searchoption])
+
+
     return (
     <>
      <form onSubmit={onsubmit}>
