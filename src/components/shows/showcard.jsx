@@ -11,7 +11,7 @@ const Showcard=({key,name,img,summary,id})=>{
             <img src={img} alt="no-img" />
           <div>{summaryStripped}</div>
          
-          <Link to={`/show/${id}`}>read more..</Link>
+          <a href={`/show/${id}`} target="_blank" rel="noreferrer">read more..</a>
          <button>star me</button>
         </div>
         
