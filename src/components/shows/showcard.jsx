@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const Showcard=({key,name,img,summary,id})=>{
+const Showcard=({key,name,img,summary,id,onStarclick,starred})=>{
    const summaryStripped=summary?summary.split(' ').slice(0,10).join(' ').replace(/<.+?>/g,'')
    :'No description';
     return (
@@ -12,7 +12,7 @@ const Showcard=({key,name,img,summary,id})=>{
           <div>{summaryStripped}</div>
          
           <a href={`/show/${id}`} target="_blank" rel="noreferrer">read more..</a>
-         <button>star me</button>
+         <button onClick={()=>onStarclick(id)}>{starred?'unstar me':'star me'}</button>
         </div>
         
        

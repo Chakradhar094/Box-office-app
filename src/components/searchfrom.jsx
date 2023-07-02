@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { usePersistedstate } from "../lib/usepersisttantstate";
 const Search=({onsearch})=>{
-    const [serachStr, setsearchStr] = useState('');
+    const [serachStr, setsearchStr] = usePersistedstate();
    
     const [searchoption,setsearchoption]=useState('shows');
+     
+
 
     
     const onsearchStrChange = eve => {
         setsearchStr(eve.target.value);
+       
       }
 
       const onradioclick=(eve)=>{
@@ -22,9 +26,7 @@ const Search=({onsearch})=>{
         onsearch(obj);
      }
     
-     useEffect(()=>{
-        setTimeout(()=>console.log(1000),100);
-     },[searchoption])
+   
 
 
     return (

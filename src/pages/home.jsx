@@ -31,7 +31,7 @@ const Home = () => {
     }
   };
  
-  const renderapidata = () => {
+  const renderapidata = () => { 
     if (apierror) {
 
       return <div>No results found</div>

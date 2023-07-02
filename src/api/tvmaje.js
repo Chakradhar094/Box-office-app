@@ -8,3 +8,10 @@ export const majeapi=async (queryString)=>{
   return await response.json();;
  
 }
+
+export const getshowbyIds=async (showids)=>{
+         const promises=showids.map((showid)=>majeapi(`/shows/${showid}`));
+         return  Promise.all(promises);
+        // console.log(result);
+          ;
+}
