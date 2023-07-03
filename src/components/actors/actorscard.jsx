@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
-
+import { SearchCard, SearchImgWrapper} from "../common/SearchCard";
+import { StarIcon } from "../common/StarIcon";
 
 const Actorcard=({key,name,img,id,country,birthday,gender})=>{
     if(!country)country="No desription";
    //const summaryStripped=summary?summary.split(' ').slice(0,10).join(' ').replace(/<.+?>/g,'')
    //:'No description';
     return (
-        <div>
+        <SearchCard>
             <h1 > {name}</h1>
        
-            <img src={img} alt="no-img" />
+           <SearchImgWrapper> <img src={img} alt="no-img" /></SearchImgWrapper> 
         
             <div>
               <p>
@@ -30,8 +31,8 @@ const Actorcard=({key,name,img,id,country,birthday,gender})=>{
             
             </div>
           <Link to="/">read more..</Link>
-         <button>star me</button>
-        </div>
+       
+        </SearchCard>
         
        
     );  

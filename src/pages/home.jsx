@@ -3,6 +3,7 @@ import { majeapi } from './../api/tvmaje';
 import Search from '../components/searchfrom';
 import Shows from '../components/shows/showssgrid';
 import Actors from '../components/actors/actorsgrid';
+import { TextCenter } from '../components/common/TextCenter';
 const Home = () => {
   const [apidata, setapidata] = useState(null);
   const [apierror, setapierror] = useState(null);
@@ -34,7 +35,9 @@ const Home = () => {
   const renderapidata = () => { 
     if (apierror) {
 
-      return <div>No results found</div>
+      return <TextCenter style={{
+        textAlign:"center"       
+              }}>No results found</TextCenter>
     }
     if (apidata) {
        return apidata[0].show?<Shows apidata={apidata}/>:<Actors apidata={apidata}/>;
@@ -48,7 +51,7 @@ const Home = () => {
     <div>
       <Search onsearch={onsearch} />
       <div>{renderapidata()}</div>
-      <div>Home page</div>
+    
     </div>
   );
 };

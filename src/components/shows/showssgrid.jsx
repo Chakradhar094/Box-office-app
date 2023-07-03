@@ -1,7 +1,7 @@
 import Showcard from "./showcard";
 import { usePersistedRedducer } from "../../lib/usereducer";
 
-
+import { FlexGrid } from "../common/FlexGrid";
 
 
 const Shows=({apidata})=>{
@@ -20,7 +20,7 @@ const Shows=({apidata})=>{
   console.log(apidata);
  
     return (
-        <div>
+        <FlexGrid>
           {
             apidata.map((data, index) => {
                 return <Showcard 
@@ -34,7 +34,7 @@ const Shows=({apidata})=>{
                  />
               })
           }
-        </div>
+        </FlexGrid>
     );
 }
 

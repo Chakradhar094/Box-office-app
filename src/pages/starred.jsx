@@ -2,6 +2,7 @@ import { usePersistedRedducer } from "../lib/usereducer";
 import { getshowbyIds } from "../api/tvmaje";
 import { useQuery } from '@tanstack/react-query';
 import Shows from "../components/shows/showssgrid"
+import { TextCenter } from "../components/common/TextCenter";
 const Starred=()=>{
     const [starredShowsIds]=usePersistedRedducer();
   
@@ -17,7 +18,7 @@ const Starred=()=>{
     
       console.log(starredShows);
      if (starredShows?.length === 0) {
-    return <h1>No shows were starred</h1>;
+    return <TextCenter>No shows were starred</TextCenter>;
   }
 
   if (starredShows?.length > 0) {
@@ -25,9 +26,9 @@ const Starred=()=>{
   }
 
   if (starredShowsError) {
-    return <h1>Error occured: {starredShowsError.message}</h1>;
+    return <TextCenter>Error occured: {starredShowsError.message}</TextCenter>;
   }
 
-  return <h1>Shows are loading</h1>;
+  return <TextCenter>Shows are loading...</TextCenter>;
 }
 export default Starred;
