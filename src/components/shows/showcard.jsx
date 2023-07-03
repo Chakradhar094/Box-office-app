@@ -16,7 +16,7 @@ const Showcard=({key,name,img,summary,id,onStarclick,starred})=>{
             <h1 > {name}</h1>
            
           <div>{summaryStripped}</div>
-         <ActionSection>  <a href={`/show/${id}`} target="_blank" rel="noreferrer">read more..</a></ActionSection>
+         <ActionSection>  <Link to={`/show/${id}`} target="_blank" rel="noreferrer">read more..</Link></ActionSection>
         
         <StarBtn onClick={()=>onStarclick(id)} className={starred?'animate':''}><StarIcon active={starred}/> </StarBtn>
         </SearchCard>
